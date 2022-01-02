@@ -1,12 +1,4 @@
-\documentclass{amsart}
-
-\input{../packages.tex}
-\input{../macros.tex}
-
-\title{Linear Algebra}
-
-\begin{document}
-\maketitle
+\part*{Linear Algebra}
 
 \section*{Vector Spaces and Subspaces}
 
@@ -86,7 +78,7 @@
 		\item The \emph{span} of $S$, denoted $\Span(S)$, is the set of all linear
 			combinations of elements of $S$. That is, \[\Span(S) = \{a_1 \vec{v}_1
 				+ \cdots a_n \vec{v}_n \mid a_1, \dots, a_n \in \R\}.\]
-		\item We define $\Span{\emptyset} = \{\vec{0}\}$.
+		\item We define $\Span(\emptyset) = \{\vec{0}\}$.
 		\item If $\Span(S) = W$, we say that $S$ spans $W$.
 	\end{itemize}
 \end{definition}
@@ -136,14 +128,13 @@
 	A matrix is in \emph{echelon form} if it satisfies all of the following
 	conditions:
 	\begin{enumerate}
-		\item If a row is not a zero row (i.e., all entries of that row are
-			zeros), then the first nonzero entry is a 1 (called the
-			\emph{pivot}).
+		\item If a row is not a zero row (i.e., all entries of that row are zeros),
+			then the first nonzero entry is a 1 (and called the \emph{pivot}).
 		\item If a column contains a pivot, then all other entries in that column
 			are 0.
-		\item If a row contains a pivot, then each row above contains a pivot further
-			to the left. This also implies that zero rows, if any, appear at the
-			bottom.
+		\item If a row contains a pivot, then each row above contains a pivot
+			further to the left. This also implies that zero rows, if any, appear at
+			the bottom.
 	\end{enumerate}
 	Variables corresponding to the pivots are called \emph{pivot variables}.
 	All other variables are called \emph{free variables}.
@@ -166,4 +157,3 @@
 	the echelon form of $A$, then the columns of $A$ corresponding to the
 	columns of $B$ with pivots form a basis of the column space.
 \end{definition}
-\end{document}
