@@ -41,11 +41,30 @@
 	\end{enumerate}
 \end{definition}
 
+\begin{examples}
+	Some simple vector spaces:
+	\begin{itemize}
+		\item $\R^n$ is the vector space of ordered $n$-tuples of real numbers.
+			Note: $\dim(\R^n) = n$.
+		\item $P_n(\R)$ is the vector space of polynomials of degree \emph{less
+			than or equal to $n$}. Note: $\dim(P_n(\R)) = n + 1$.
+		\item $M_{m \times n}(\R)$ is the vector space of $m \times n$ matrices with
+			real entries. Note: $\dim(M_{m \times n}(\R)) = mn$.
+	\end{itemize}
+\end{examples}
+
 \begin{definition}
 	Let $V$ be a vector space and let $W \subseteq V$ be a subset. Then $W$ is a
 	(vector) \emph{subspace} of $V$ if $W$ is a vector space itself under the
 	operations of vector sum and scalar multiplication from $V$.
 \end{definition}
+
+\begin{notes}
+	The empty set $\emptyset$ is not a vector space. Instead the smallest vector
+	space is the trivial space, $\{\vec{0}\}$. Every vector space $V$ has two
+	obvious subspaces: the trivial subspace $\{\vec{0}\} \subseteq V$, and the
+	improper subspace $V \subseteq V$.
+\end{notes}
 
 \begin{theorem}[Subspace Theorem]
 	Let $V$ be a vector space. A subset $W \subseteq V$ is a subspace if it
@@ -56,4 +75,95 @@
 			\vec{y} \in W$.
 	\end{enumerate}
 \end{theorem}
+
+\begin{definition}
+	Let $V$ be a vector space, and let $S = \{\vec{v}_1, \dots, \vec{v}_n\}
+	\subseteq V$ be a finite set of vectors in $V$.
+	\begin{itemize}
+		\item A \emph{linear combination} of elements of $S$ is an expression $a_1
+			\vec{v}_1 + \cdots + a_n \vec{v}_n$ for some scalars $a_1, \dots, a_n
+			\in \R$.
+		\item The \emph{span} of $S$, denoted $\Span(S)$, is the set of all linear
+			combinations of elements of $S$. That is, \[\Span(S) = \{a_1 \vec{v}_1
+				+ \cdots a_n \vec{v}_n \mid a_1, \dots, a_n \in \R\}.\]
+		\item We define $\Span{\emptyset} = \{\vec{0}\}$.
+		\item If $\Span(S) = W$, we say that $S$ spans $W$.
+	\end{itemize}
+\end{definition}
+
+\begin{theorem}
+	Let $V$ be a vector space and let $S$ be any subset of $V$. Then
+	$\Span(S)$ is a subspace of $V$.
+\end{theorem}
+
+\begin{theorem}
+	If $W$ is a subspace and $S \subseteq W$, then $\Span(S) \subseteq W$.
+\end{theorem}
+
+\begin{definition}
+	The set $S$ is \emph{linearly dependent} if there exists scalars $a_1, \dots,
+	a_n \in \R$ that are not all zero such that $a_1 \vec{v}_1 + \cdots + a_n
+	\vec{v}_n = \vec{0}$. $S$ is \emph{linearly independent} if it is not
+	linearly dependent. Equivalently, for any scalars $a_1, \dots, a_n \in \R$
+	such that $a_1 \vec{v}_1 + \cdots a_n \vec{v}_n = \vec{0}$, we must have
+	$a_1 = \cdots = a_n = 0$.
+\end{definition}
+
+\begin{definition}
+	The set $S \subseteq V$ is a basis for $V$ if $S$ is linearly independent
+	and $\Span(S) = V$.
+\end{definition}
+
+\begin{definition}
+	The \emph{dimension} of $V$ is the number $\dim(V)$ of elements in a basis
+	for $V$. If $V$ has no finite basis, we say $\dim(V) = \infty$.
+\end{definition}
+
+\begin{theorem}
+	Any two bases of $V$ have the same number of elements.
+\end{theorem}
+
+\begin{fact}
+	The three kinds of row reduction steps are
+	\begin{enumerate}
+		\item Switching two rows.
+		\item Multiplying a row by a nonzero scalar.
+		\item Adding a multiple of one row to another.
+	\end{enumerate}
+\end{fact}
+
+\begin{definition}
+	A matrix is in \emph{echelon form} if it satisfies all of the following
+	conditions:
+	\begin{enumerate}
+		\item If a row is not a zero row (i.e., all entries of that row are
+			zeros), then the first nonzero entry is a 1 (called the
+			\emph{pivot}).
+		\item If a column contains a pivot, then all other entries in that column
+			are 0.
+		\item If a row contains a pivot, then each row above contains a pivot further
+			to the left. This also implies that zero rows, if any, appear at the
+			bottom.
+	\end{enumerate}
+	Variables corresponding to the pivots are called \emph{pivot variables}.
+	All other variables are called \emph{free variables}.
+\end{definition}
+
+\begin{definition}
+	A \emph{homogeneous} system of linear equations is when all the linear
+	combinations equal 0. A system is \emph{inhomogeneous} otherwise.
+\end{definition}
+
+\begin{definition}
+	The \emph{nullspace} of a matrix $A$ is the solution set of its
+	corresponding homogeneous system of equations. The basis of the nullspace
+	of $A$ is the set of vectors that the free variables end up multiplied by in
+	the solution.
+\end{definition}
+
+\begin{definition}
+	The \emph{column space} of a matrix $A$ is the span of its columns. If $B$ is
+	the echelon form of $A$, then the columns of $A$ corresponding to the
+	columns of $B$ with pivots form a basis of the column space.
+\end{definition}
 \end{document}
