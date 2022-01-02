@@ -1,0 +1,59 @@
+\documentclass{amsart}
+
+\input{../packages.tex}
+\input{../macros.tex}
+
+\title{Linear Algebra}
+
+\begin{document}
+\maketitle
+
+\section*{Vector Spaces and Subspaces}
+
+\begin{definition}
+	A (real) \emph{vector space} is a set $V$ (whose elements are called
+	\emph{vectors}) together with
+	\begin{enumerate}
+		\item an operation called \emph{vector addition}, which for each pair of
+			vector $\vec{x}, \vec{y} \in V$ produces another vector in $V$ denoted
+			$\vec{x} + \vec{y}$, and
+		\item an operation called \emph{multiplication by a scalar} (a real number),
+			which for each vector $\vec{x} \in V$, and each scalar $c \in \R$
+			produces another vector in $V$ denoted $c \vec{x}$.
+	\end{enumerate}
+	Furthermore, the two operations must satisfy the follow \emph{axioms}:
+	\begin{enumerate}
+		\item For all vectors $\vec{x}, \vec{y}$, and $\vec{z} \in V$, $(\vec{x}
+			+ \vec{y}) + \vec{z} = \vec{x} + (\vec{y} + \vec{z})$.
+		\item For all vectors $\vec{x}$ and $\vec{y} \in V$, $\vec{x} + \vec{y}
+			= \vec{y} + \vec{x}$.
+		\item There exists a vector $\vec{0} \in V$ with the property that
+			$\vec{x} + \vec{0} = \vec{x}$ for all vectors $\vec{x} \in V$.
+		\item For each vector $\vec{x} \in V$, there exists a vector denoted
+			$-\vec{x}$ with the property that $\vec{x} + -\vec{x} = \vec{0}$.
+		\item For all vectors $\vec{x}$ and $\vec{y} \in V$ and all scalars $c \in
+			\R$, $c(\vec{x} + \vec{y}) = c\vec{x} + c\vec{y}$.
+		\item For all vectors $\vec{x} \in V$, and all scalars $c$ and $d \in \R$,
+			$(c + d)\vec{x} = c\vec{x} + d\vec{x}$.
+		\item For all vectors $\vec{x} \in V$, and all scalars $c$ and $d \in \R$,
+			$(cd)\vec{x} = c(d\vec{x})$.
+		\item For all vectors $\vec{x} \in V$, $1\vec{x} = \vec{x}$.
+	\end{enumerate}
+\end{definition}
+
+\begin{definition}
+	Let $V$ be a vector space and let $W \subseteq V$ be a subset. Then $W$ is a
+	(vector) \emph{subspace} of $V$ if $W$ is a vector space itself under the
+	operations of vector sum and scalar multiplication from $V$.
+\end{definition}
+
+\begin{theorem}[Subspace Theorem]
+	Let $V$ be a vector space. A subset $W \subseteq V$ is a subspace if it
+	satisfies the following properties:
+	\begin{enumerate}
+		\item $W \neq \emptyset$
+		\item For all $\vec{x}, \vec{y} \in W$ and all $c \in \R$, we have $c\vec{x} +
+			\vec{y} \in W$.
+	\end{enumerate}
+\end{theorem}
+\end{document}

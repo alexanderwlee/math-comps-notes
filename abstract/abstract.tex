@@ -1,0 +1,195 @@
+\documentclass{amsart}
+
+\input{../packages.tex}
+\input{../macros.tex}
+
+\title{Abstract Algebra}
+
+\begin{document}
+\maketitle
+
+\section*{Groups}
+
+\begin{definition}
+	Suppose that:
+	\begin{enumerate}
+		\item $G$ is a set and $*$ is a binary operation on $G$,
+		\item $*$ is associative,
+		\item there exists an element $e$ of $G$ such that $\forall x \in G$ \[x
+			* e = e * x = x \text{ (identity element)}\]
+		\item for each $x \in G$, there exists an element $y \in G$ such that
+			\[x * y = y * x = e\]
+	\end{enumerate}
+	Then $G$, together with the binary operation $*$, is called a
+	\emph{group} and denoted $(G, *)$.
+\end{definition}
+
+\begin{theorem}
+	If $(G, *)$ is a group, then there is only one identity element in $G$.
+\end{theorem}
+
+\begin{theorem}
+	If $(G, *)$ is a group and $x \in G$, then $x$ has only one inverse.
+\end{theorem}
+
+\begin{definition}
+	We say a group $G$ is \emph{abelian} if the group operation is commutative,
+	i.e., if $xy = yx$ for all $x, y \in G$.
+\end{definition}
+
+\begin{notation}
+	For $g \in G$ and $n \in \Z$, $g^n = g \cdot g \cdots g$ ($n$-times).
+\end{notation}
+
+\begin{notation}
+	If the operation of $G$ is called $+$, then we write $ng$ instead of $g^n$.
+\end{notation}
+
+\begin{notation}
+	When $G$ is finite, its order $|G|$ is the number of elements in the group.
+\end{notation}
+
+\begin{notation}
+	When $g \in G$ has finite order, its order $o(g)$ is the smallest integer $m >
+	0$ with $g^m = e$.
+\end{notation}
+
+\begin{notation}
+	If $g^m = e$ for some $m \in \Z$, then $o(g) \mid m$.
+\end{notation}
+
+\section*{Subgroups}
+
+\begin{definition}
+		Let $(G, *)$ be a group and $H \subseteq G$. $H$ is a \emph{subgroup} of $G$
+		if the elements of $H$ from a group under $*$. I.e. $(H, *)$ is a group.
+\end{definition}
+
+\begin{theorem}
+		Let $H$ be a nonempty subset of group $G$. Then, $H$ is a subgroup of $G$ if
+		and only if
+    \begin{enumerate}
+        \item $\forall a,b \in H$, $ab \in H$ and
+        \item $\forall a \in H$, $a^{-1} \in H$.
+    \end{enumerate}
+		\emph{Terminology:} If $H$ has property 1 we say it is closed under
+		multiplication. If $H$ has property 2 we say it is closed under inverses.
+\end{theorem}
+
+\begin{definition}
+	An element $g \in G$ generates the \emph{cyclic} subgroup $\langle g
+	\rangle = \{g^m \mid m \in \Z\}$.
+\end{definition}
+
+\begin{theorem}
+	An element $g \in G$ has finite order if and only if $\langle g \rangle$ is
+	finite, in which case $o(g) = |\langle g \rangle|$.
+\end{theorem}
+
+\begin{theorem}[Lagrange's Theorem]
+	If $H$ is a subgroup of a finite group $G$, then $|H| \mid |G|$.
+\end{theorem}
+
+\begin{corollary}
+	If $|G|$ is prime, the $G$ is cyclic.
+\end{corollary}
+
+\begin{corollary}
+	For all $g \in G$, we have $o(g) \mid |G|$.
+\end{corollary}
+
+\begin{corollary}
+	For all $g \in G$, we have $g^{|G|} = e$.
+\end{corollary}
+
+\section*{Cosets}
+
+\begin{definition}
+		If $H$ is a subgroup of $G$, then by \emph{right coset of $H$ in $G$} we
+		mean a subset of the form $Hg$, where $g \in G$ and \[Hg = \{hg \mid h \in
+		H\}.\]
+\end{definition}
+
+\begin{definition}
+		If $H$ is a subgroup of $G$, then by \emph{left coset of $H$ in $G$} we
+		mean a subset of the form $gH$, where $g \in G$ and \[gH = \{gh \mid h \in
+		H\}.\]
+\end{definition}
+
+\begin{theorem}
+	Two right cosets $Hx$ and $Hy$ are either the same set or disjoint sets.
+	(That is, if they share even one element, they are exactly the same set.) The
+	same holds for left cosets. (On the other hand, a right coset and a left
+	coset can intersect each other without being the same set.)
+\end{theorem}
+
+\begin{corollary}[Right coset relation]
+	$Hx = Hy \Longleftrightarrow xy^{-1} \in H \Longleftrightarrow x \in Hy$.
+\end{corollary}
+
+\begin{corollary}[Left coset relation]
+	$xH = yH \Longleftrightarrow y^{-1}x \in H \Longleftrightarrow x \in yH$.
+\end{corollary}
+
+\begin{corollary}
+	$Hx = H \Longleftrightarrow x \in H \Longleftrightarrow xH = H$.
+\end{corollary}
+
+\begin{notation}
+	If $G$ is abelian and the group operation is written as addition, then the
+	left and right cosets of $H \subseteq G$ coincide and are written
+	\[H + a = \{h + a \mid h \in H\}.\]
+	Here, the coset relation becomes
+	\[H + a = H + b \Longleftrightarrow a - b \in H \Longleftrightarrow a \in H +
+		b.\]
+\end{notation}
+
+\begin{definition}
+	When a group $G$ is a union of finitely many left cosets of a subgroup $H$,
+	we say that \emph{$H$ has finite index in $G$} and the \emph{index of $H$ in
+	$G$} is defined to be
+	\[[G : H] = \text{number of distinct left cosets of $H$ in $G$}.\]
+	The same holds for right cosets. When $G$ is finite, $[G : H] = |G|/|H|$,
+	since all cosets of $H$ have the same number of elements.
+\end{definition}
+
+\section*{Normal Subgroups}
+
+\begin{theorem}
+	Given a subgroup $H \subseteq G$, $H$ being normal in $G$ is equivalent to
+	any of the following conditions:
+	\begin{itemize}
+		\item $gH = Hg$ for all $g \in G$.
+		\item $gHg^{-1} = H$ for all $g \in G$.
+		\item $ghg^{-1} \in H$ for all $g \in G$ and $h \in H$.
+	\end{itemize}
+\end{theorem}
+
+\begin{corollary}
+	When $N \subseteq G$ is a normal subgroup, every left coset is a right
+	coset, and vice versa.
+\end{corollary}
+
+\begin{theorem}
+	The set of all cosets of $N$ in $G$ forms a group and is denoted $G/N$. The
+	group operation is defined by $Na \cdot Nb = Nab$, which is well-defined
+	since $N$ is normal. When $G$ is finite, $G/N$ is also finite and $|G/N| =
+	[G : N] = |G|/|N|$.
+\end{theorem}
+
+\section*{Group Homomorphisms}
+
+\begin{definition}
+	Let $G$ and $H$ be groups and let $\phi : G \rightarrow H$ be a function. We
+	say that $\phi$ is a \emph{homomorphism} if for all $a, b \in G$,
+	\[\phi(ab) = \phi(a) \phi(b).\]
+\end{definition}
+
+\begin{theorem}
+	If $\phi : G \rightarrow H$ is a homomorphism, then
+	\begin{itemize}
+		\item $\phi(e_G) = e_H$.
+		\item $\phi(g^n) = {\phi(g)}^n$ for all $g \in G$ and $n \in \Z$.
+	\end{itemize}
+\end{theorem}
+\end{document}
