@@ -150,8 +150,8 @@
 	\begin{align*}
 		(x, y, z) \text{ is in the plane } &\Longleftrightarrow \vec{n} \text{ is
 		perpendicular to the vector from } (x, y, z) \text{ to } (x_0, y_0, z_0) \\
-		& \Longleftrightarrow \vec{n} \cdot \langle x - x_0, y - y_0, z - z_0
-		\rangle = 0.
+		&\Longleftrightarrow \vec{n} \cdot \langle x - x_0, y - y_0, z - z_0 \rangle
+		= 0.
 	\end{align*}
 	The vector $\vec{n}$ is called a normal vector to the plane. For a plane
 	defined by $ax + by +cz = d$, a normal vector is given by $\vec{n} = \langle
@@ -166,3 +166,112 @@
 	\]
 	The situation is similar on $\R^3$.
 \end{definition}
+
+\section*{Functions of Several Variables}
+
+\begin{definition}
+	If $f$ is a function of two variables, its partial derivatives are the
+	functions $f_x$ and $f_y$ defined by
+	\begin{align*}
+		f_x(x, y) &= \lim_{h \rightarrow 0} \frac{f(x + h, y) - f(x, y)}{h} \\
+		f_y(x, y) &= \lim_{h \rightarrow 0} \frac{f(x, y + h) - f(x, y)}{h}
+	\end{align*}
+	If $f$ is a function of three variables $x$, $y$, and $z$, then its partial
+	derivative with respect to $x$ is defined as
+	\[
+		f_x(x, y, z) = \lim_{h \rightarrow 0} \frac{f(x +h, y, z) - f(x, y, z)}{h}
+	\]
+\end{definition}
+
+\begin{notation}
+	The standard notation for the partial derivatives: $\frac{\partial f}{\partial
+	x} = f_x(x, y)$, $\frac{\partial f}{\partial y} = f_y(x, y)$,
+	$\frac{\partial^2 f}{\partial^2 x} = f_{xx}(x, y)$, $\frac{\partial^2
+	f}{\partial x \partial y} = f_{yx}(x, y)$, $\frac{\partial^2 f}{\partial^2 y}
+	= f_{yy}(x, y)$ for $f(x, y)$, and similarly for $f(x, y, z)$.
+\end{notation}
+
+\begin{interpretation}
+	If $z = f(x, y)$, then $\partial z / \partial x$ represents the rate of change
+	of $z$ with respect to $x$ when $y$ is fixed. Similarly, $\partial z /
+	\partial y$ represents the rate of change of $z$ with respect to $y$ when $x$
+	is fixed.
+
+	If $w = f(x, y, z)$, then $f_x = \partial w / \partial x$ can be interpreted
+	as the rate of change of $w$ with respect to $x$ when $y$ and $z$ are held
+	fixed.
+\end{interpretation}
+
+\begin{fact}
+	Rule for find partial derivatives of $z = f(x, y)$.
+	\begin{enumerate}
+		\item To find $f_x$, regard $y$ as a constant and differentiate $f(x, y)$
+			with respect to $x$.
+		\item To find $f_y$, regard $x$ as a constant and differentiate $f(x, y)$
+			with respect to $y$.
+	\end{enumerate}
+\end{fact}
+
+\begin{definition}
+	A unit vector is a vector whose length is 1. In general, if $\vec{v} \neq
+	\vec{0}$, then the unit vector that has the same direction as $\vec{v}$ is
+	\[
+		\vec{u} = \frac{\vec{v}}{|\vec{v}|}.
+	\]
+\end{definition}
+
+\begin{definition}
+	The directional derivative of $f(x, y)$ in the direction of a unit vector
+	$\vec{u} = \langle u_1, u_2 \rangle$ at the point $(a, b)$ is
+	\[
+		D_{\vec{u}} f(a, b) = \lim_{h \rightarrow 0} \frac{f(a + h u_1, b + h u_2) -
+		f(a, b)}{h}
+	\]
+	if this limit exists.
+
+	The directional derivative of $f(x, y, z)$ in the direction of a unit vector
+	$\vec{u} = \langle u_1, u_2, u_3 \rangle$ at the point $(a, b, c)$ is
+	\[
+		D_{\vec{u}} f(a, b, c) = \lim_{h \rightarrow 0} \frac{f(a + h u_1, b + h
+		u_2, c + h u_3) - f(a, b, c)}{h}
+	\]
+	if this limit exists.
+\end{definition}
+
+\begin{interpretation}
+	The directional derivative is the rate of change of a function of two or more
+	variables in any direction.
+\end{interpretation}
+
+\begin{definition}
+	The gradient of $f(x, y)$ at $(a, b)$ is the vector
+	\[
+		\nabla f(a, b) = \frac{\partial f}{\partial x}(a, b) \vec{\imath} +
+		\frac{\partial f}{\partial y}(a, b) \vec{\jmath} = \left\langle
+		\frac{\partial f}{\partial x}(a, b), \frac{\partial f}{\partial y}(a, b)
+		\right\rangle
+	\]
+	and similarly for $f(x, y, z)$.
+\end{definition}
+
+\begin{fact}
+	$\nabla f(a, b)$ is perpendicular to the level curve $f(x, y) = f(a, b)$ at
+	the point $(a, b)$. Similarly, $\nabla f(a, b, c)$ is perpendicular to the
+	level surface $f(x, y, z) = f(a, b, c)$ at $(a, b, c)$.
+\end{fact}
+
+\begin{theorem}
+	If $f(a, b)$ is differentiable at $(a, b)$ and $\vec{u}$ is a unit vector,
+	then
+	\[
+		D_{\vec{u}} f(a, b) = \nabla f(a, b) \cdot \vec{u},
+	\]
+	and similarly for $f(x, y, z)$.
+\end{theorem}
+
+\begin{theorem}
+	When $\nabla f(a, b) \neq \vec{0}$, the unit vector $\nabla f(a, b) / |\nabla
+	f(a, b)|$ gives the direction in which $f(x, y)$ is increasing most rapidly.
+	Furthermore, the maximum rate of increase is $|\nabla f(a, b)|$. Similar
+	results hold for $f(x, y, z)$.
+\end{theorem}
