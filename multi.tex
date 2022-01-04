@@ -275,3 +275,32 @@
 	Furthermore, the maximum rate of increase is $|\nabla f(a, b)|$. Similar
 	results hold for $f(x, y, z)$.
 \end{theorem}
+
+\begin{facts}
+	Tangent planes arise in two situations:
+	\begin{itemize}
+		\item If $f(x, y)$ is differentiable at $(x_0, y_0)$, then the tangent plane
+			to the graph $z = f(x, y)$ at the point $(x_0, y_0, f(x_0, y_0))$ is
+			defined by
+			\begin{equation}
+				z - f(x_0, y_0) = f_x(x_0, y_0) (x - x_0) + f_y(x_0, y_0) (y - y_0).
+			\end{equation}
+		\item If $F(x, y, z)$ is differentiable at $(x_0, y_0, z_0)$, then $(x_0,
+			y_0, z_0)$ lies on the level surface $F(x, y, z) = F(x_0, y_0, z_0)$, and
+			the equation of the tangent plane to the surface at this point is defined
+			by
+			\begin{equation}
+				\nabla F(x_0, y_0, z_0) \cdot (x - x_0, y - y_0, z - z_0) = 0,
+			\end{equation}
+			provided that the gradient $\nabla F(x_0, y_0, z_0)$ is nonzero. Written
+			out, this is the equation
+			\[
+				F_x(x_0, y_0, z_0) (x - x_0) + F_y(x_0, y_0, z_0) (y - y_0) + F_z(x_0,
+				y_0, z_0) (z - z_0) = 0.
+			\]
+			The two situations are related since the graph $z = f(x, y)$ is the level
+			surface $F(x, y, z) = f(x, y) - z = 0$. Since $\nabla F = f_x \vec{\imath}
+			+ f_y \vec{\jmath} - \vec{k}$, equation (2) reduces to equation (1) in
+			this case.
+	\end{itemize}
+\end{facts}
