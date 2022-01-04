@@ -1,0 +1,169 @@
+\part*{Multivariable Calculus}
+
+\section*{Elementary Vector Analysis}
+
+\begin{notation}
+	The Cartesian coordinates: $(x, y) \in \R^2$ and $(x, y, z) \in \R^3$.
+\end{notation}
+
+\begin{notation}
+	A vector $\vec{v}$ in $\R^2$ or $\R^3$ is often represented by a directed line
+	segment. In terms of coordinates, we write $\vec{v} = \langle a_1, a_2
+	\rangle$ in $\R^2$ and $\vec{v} = \langle a_1, a_2, a_2 \rangle$ in $\R^3$.
+\end{notation}
+
+\begin{notation}
+	The standard basis vectors $\vec{\imath} = \langle 1, 0 \rangle$,
+	$\vec{\jmath} = \langle 1, 0 \rangle$ in $\R^2$ and $\vec{\imath} = \langle 1,
+	0, 0 \rangle$, $\vec{\jmath} = \langle 0, 1, 0 \rangle$, $\vec{k} = \langle 0,
+	0, 1 \rangle$ in $\R^3$.
+\end{notation}
+
+\begin{notation}
+	A vector $\vec{v}$ has length $|\vec{v}|$, sometimes denoted $||\vec{v}||$.
+\end{notation}
+
+\begin{fact}
+	Nonzero vectors $\vec{v}$ and $\vec{u}$ are parallel if and only if each is a
+	constant multiple of the other.
+\end{fact}
+
+\begin{definition}
+	A point $P$ in $\R^2$ or $\R^3$ gives a vector from the origin to $P$, called
+	the position vector of $P$. This allows us to regard points as vectors and
+	vice versa.
+\end{definition}
+
+\begin{definition}
+	The length of a $n$-dimensional vector $\vec{v} = \langle a_1, \dots, a_n
+	\rangle$ is
+	\[
+		|\vec{v}| = \sqrt{{a_1}^2 + \cdots + {a_n}^2}
+	\]
+\end{definition}
+
+\begin{definition}
+	In $\R^2$, the dot (scalar) product of $\vec{u} = \langle a_1, a_2 \rangle$
+	and $\vec{v} = \langle b_1, b_2 \rangle$ is $\vec{u} \cdot \vec{v} = a_1 b_1 +
+	a_2 b_2$, and similarly in $\R^3$, the dot product of $\vec{u} = \langle a_1,
+	a_2, a_3, \rangle$ and $\vec{v} = \langle b_1, b_2, b_3 \rangle$ is $\vec{u}
+	\cdot \vec{v} = a_1 b_1 + a_2 b_2 + a_3 b_3$.
+\end{definition}
+
+\begin{facts}
+	The linearity properties of the dot product:
+	\begin{enumerate}
+		\item $\vec{u} \cdot \vec{u} = {|\vec{u}|}^2$.
+		\item $\vec{u} \cdot \vec{v} = \vec{v} \cdot \vec{u}$.
+		\item $\vec{u} \cdot (\vec{v} + \vec{w}) = \vec{u} \cdot \vec{v} + \vec{u}
+			\cdot \vec{w}$.
+		\item $(c \vec{u}) \cdot \vec{v} = c(\vec{u} \cdot \vec{v}) = \vec{v} \cdot
+			(c \vec{v})$.
+		\item $\vec{0} \cdot \vec{u} = 0$.
+	\end{enumerate}
+	Additional properties:
+	\begin{enumerate}
+		\item $\vec{u} \cdot \vec{v} = |\vec{u}| |\vec{v}| \cos \theta$, where
+			$\theta$ is the angle between $\vec{u}$ and $\vec{v}$.
+		\item $\vec{u} \cdot \vec{v} = 0$ if and only if $\vec{u}$ and $\vec{v}$ are
+			perpendicular (orthogonal).
+	\end{enumerate}
+\end{facts}
+
+\begin{definition}
+	Given $\vec{u} = \langle a_1, a_2, a_3 \rangle$ and $\vec{v} = \langle b_1,
+	b_2, b_3 \rangle$ in $\R^3$, their cross (vector) product is
+	\[
+		\vec{u} \times \vec{v} = \det
+		\begin{pmatrix}
+			\vec{\imath} & \vec{\jmath} & \vec{k} \\
+			a_1 & a_2 & a_3 \\
+			b_1 & b_2 & b_3
+		\end{pmatrix}
+		= \det
+		\begin{pmatrix}
+			a_2 & a_3 \\
+			b_2 & b_3
+		\end{pmatrix}
+		\vec{\imath} -
+		\det
+		\begin{pmatrix}
+			a_1 & a_3 \\
+			b_1 & b_3
+		\end{pmatrix}
+		\vec{\jmath} +
+		\det
+		\begin{pmatrix}
+			a_1 & a_2 \\
+			b_1 & b_2
+		\end{pmatrix}
+		\vec{k}.
+	\]
+\end{definition}
+
+\begin{facts}
+	The linearity properties of the cross product:
+	\begin{enumerate}
+		\item $\vec{u} \times \vec{v} = -\vec{v} \times \vec{u}$.
+		\item $(c \vec{u}) \times \vec{v} = c(\vec{u} \times \vec{v}) = \vec{u}
+			\times (c \vec{v})$.
+		\item $\vec{u} \times (\vec{v} + \vec{w}) = \vec{u} \times \vec{v} + \vec{u}
+			\times \vec{w}$.
+		\item $(\vec{u} + \vec{v}) \times \vec{w} = \vec{u} \times \vec{w} + \vec{v}
+			\times \vec{w}$.
+		\item $\vec{u} \cdot (\vec{v} \times \vec{w}) = (\vec{u} \times \vec{v})
+			\cdot \vec{w}$.
+		\item $\vec{u} \times (\vec{v} \times \vec{w}) = (\vec{u} \cdot \vec{w})
+			\vec{v} - (\vec{u} \cdot \vec{v}) \vec{w}$.
+	\end{enumerate}
+	Additional properties:
+	\begin{enumerate}
+		\item $|\vec{u} \times \vec{v}| = |\vec{u}| |\vec{v}| \sin \theta$, where
+			$\theta$ is the angle between $\vec{u}$ and $\vec{v}$.
+		\item $\vec{u} \times \vec{v} = \vec{0}$ if and only if $\vec{u}$ and
+			$\vec{v}$ are parallel.
+		\item $\vec{u} \times \vec{v}$ is perpendicular to both $\vec{u}$ and
+			$\vec{v}$.
+	\end{enumerate}
+\end{facts}
+
+\begin{definition}
+	In $\R^2$ or $\R^3$, a point $\vec{r}_0$ and a nonzero vector $\vec{v}$
+	determine the line parametrized by
+	\[
+		\vec{r}(t) = \vec{r}_0 + t \vec{v}.
+	\]
+	The vector $\vec{v}$ is called a direction vector of the line. The parametric
+	equations of a line for the coordinates $(x, y, z) \in \R^3$ are
+	\[
+		x = x_0 + at \quad y = y_0 + bt \quad z = z_0 + ct,
+	\]
+	where $\vec{v} = \langle a, b, c \rangle$, $\vec{r}_0 = \langle x_0, y_0, z_0
+	\rangle$, and $t \in \R$. For $\R^2$, omit $z$.
+\end{definition}
+
+\begin{definition}
+	A plan in $\R^3$ is defined by an equation of the form $ax + by + cz = d$
+	where $\langle a, b, c \rangle \neq \langle 0, 0, 0 \rangle$. A more geometric
+	way to write the equation uses a nonzero vector $\vec{n}$ perpendicular to the
+	plane and point $(x_0, y_0, z_0)$ in the plan. Then:
+	\begin{align*}
+		(x, y, z) \text{ is in the plane } &\Longleftrightarrow \vec{n} \text{ is
+		perpendicular to the vector from } (x, y, z) \text{ to } (x_0, y_0, z_0) \\
+																			 &\Longleftrightarrow \vec{n} \cdot
+																			 \langle x - x_0, y - y_0, z - z_0 \rangle
+																			 = 0.
+		\end{align*}
+		The vector $\vec{n}$ is called a normal vector to the plane. For a plane
+		defined by $ax + by +cz = d$, a normal vector is given by $\vec{n} = \langle
+		a, b, c \rangle$.
+	\end{definition}
+
+	\begin{definition}
+		Given a curve parameterization $\vec{r}(t) = (x(t), y(t))$ in the plane, the
+		tangent vector to the curve at the point $\vec{r}(t)$ is
+		\[
+			\vec{r^\prime}(t) = \langle x^\prime(t), y^\prime(t) \rangle.
+		\]
+		The situation is similar on $\R^3$.
+	\end{definition}
