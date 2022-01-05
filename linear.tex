@@ -397,3 +397,115 @@
 		{[UT]}_\alpha^\beta = {[U]}_\beta^\gamma {[T]}_\alpha^\beta.
 	\]
 \end{fact}
+
+\begin{definition}
+	A linear transformation $T : V \rightarrow W$ is \emph{invertible} if it has
+	an \emph{inverse}, i.e., if there is another linear map $T^{-1} : W
+	\rightarrow V$ such that $T(T^{-1}(\vec{w})) = \vec{w}$ for all $\vec{w} \in
+	W$, and $T^{-1}(T(\vec{v})) = \vec{v}$ for all $\vec{v} \in V$. The following
+	are equivalent:
+	\begin{itemize}
+		\item $T$ is invertible (i.e., $T$ has an inverse $T^{-1} : W \rightarrow
+			V$).
+		\item $T$ is one-to-one and onto.
+	\end{itemize}
+\end{definition}
+
+\begin{facts}
+	Suppose $T: V \rightarrow W$ is invertible. Then:
+	\begin{itemize}
+		\item Its inverse $T^{-1}$ is unique.
+		\item Its inverse $T^{-1}$ is also invertible, and ${(T^{-1})}^{-1} = T$.
+		\item If $U : W \rightarrow X$ is also invertible, then $UT : V \rightarrow
+			X$ is invertible, and ${(UT)}^{-1} = T^{-1} U^{-1}$.
+	\end{itemize}
+\end{facts}
+
+\begin{definition}
+	A square matrix $A \in M_{n \times n}(\R)$ is \emph{invertible} if it has an
+	\emph{inverse}, i.e., if there is another matrix $B \in M_{n \times n}(\R)$
+	such that $AB = I$ and $BA = I$. The following are equivalent:
+	\begin{itemize}
+		\item $A$ is invertible.
+		\item The columns of $A$ are linearly independent.
+		\item The rows of $A$ are linearly independent.
+		\item The columns of $A$ together span $\R^n$.
+		\item The rows of $A$ together span $\R^n$.
+		\item The column space (i.e., range or image) of $A$ is all of $R^n$.
+		\item The null space (i.e., kernel) of $A$ is $\{\vec{0}\}$.
+		\item $\rank(A) = n$.
+		\item $\nullity(A) = 0$.
+		\item $\det(A) \neq 0$.
+		\item $\lambda = 0$ is not an eigenvalue of $A$.
+	\end{itemize}
+\end{definition}
+
+\begin{facts}
+	Suppose $A \in M_{n \times n}(\R)$ is invertible. Then:
+	\begin{itemize}
+		\item Its inverse $A^{-1}$ is unique.
+		\item Its inverse $A^{-1}$ is also invertible, and ${(A^{-1})}^{-1} = A$.
+		\item If $B \in M_{n \times n}(\R)$ is invertible, then $AB$ is invertible,
+			and ${(AB)}^{-1} = B^{-1} A^{-1}$.
+	\end{itemize}
+\end{facts}
+
+\begin{facts}
+	Computing inverse:
+	\begin{itemize}
+		\item $A =
+			\begin{bmatrix}
+				a & b \\
+				c & d
+			\end{bmatrix}$
+			is invertible if and only if $ad - bc \neq 0$, in which case $A^{-1} =
+			\frac{1}{ad - bc}
+			\begin{bmatrix}
+				d & -b \\
+				-c & a
+			\end{bmatrix}$.
+		\item For $3 \times 3$ and larger matrices, use the Gauss-Jordan method (row
+			reduction).
+	\end{itemize}
+\end{facts}
+
+\begin{definition}
+	Let $V$ be a finite-dimensional vector space, and let $\alpha = \{\vec{v}_1,
+	\dots, \vec{v}_n\}$ and $\beta = \{\vec{w}_1, \dots, \vec{w}_n\}$ both be
+	bases for $V$. The \emph{change-of-basis matrix} from the $\alpha$-coordinate
+	to $\beta$-coordinate is the $n \times n$ matrix ${[I]}_\alpha^\beta$, where
+	$I: V \rightarrow V$ is the identity map $I(\vec{v}) = \vec{v}$. That is,
+	\[
+		{[I]}_\alpha^\beta =
+		\begin{bmatrix}
+			a_{11} & a_{12} & \cdots & a_{1n} \\
+			a_{21} & a_{22} & \cdots & a_{2n} \\
+			\vdots & \vdots & \ddots & \vdots \\
+			a_{n1} & a_{n2} & \cdots & a_{nn}
+		\end{bmatrix},
+	\]
+	where
+	\begin{align*}
+		\vec{v}_1 &= a_{11} \vec{w}_1 + a_{21} \vec{w}_2 + \cdots + a_{m1} \vec{w}_m
+		\\
+		\vec{v}_2 &= a_{12} \vec{w}_1 + a_{22} \vec{w}_2 + \cdots + a_{m2} \vec{w}_m
+		\\
+		&\vdotswithin{=} \\
+		\vec{v}_n &= a_{1n} \vec{w}_1 + a_{2n} \vec{w}_2 + \cdots + a_{mn}
+		\vec{w}_m.
+	\end{align*}
+	As before, note that the grid of coefficients is flipped sideways to form the
+	matrix.
+\end{definition}
+
+\begin{fact}
+	For any $\vec{v} \in V$, recall that ${[\vec{v}]}_\alpha \in \R^n$ is the
+	$n$-entry column vector of $\alpha$-coordinates for $\vec{v}$. We can compute
+	the $\beta$-coordinate vector for $\vec{v}$ via the formula ${[\vec{v}]}_\beta
+	= {[I]}_\alpha^\beta {[\vec{v}]}_\alpha$.
+\end{fact}
+
+\begin{fact}
+	The change of coordinates matrix to change coordinates the other way is the
+	inverse: ${[I]}_\beta^\alpha = {({[I]}_\alpha^\beta)}^{-1}$.
+\end{fact}
