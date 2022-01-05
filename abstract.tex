@@ -233,3 +233,86 @@
 	isomorphism $\widetilde{\phi} : G/\Ker(\phi) \simeq \Image(\phi)$ defined
 	by $\widetilde{\phi}(g \Ker(\phi)) = \phi(g)$.
 \end{theorem}
+
+\begin{definition}
+	If $X$ is a nonempty set, then a one-to-one onto function $f : X \rightarrow
+	X$ is called a \emph{permutation}.
+\end{definition}
+
+\begin{definition}
+	Let $X$ be a nonempty set. The group $(S_X, \circ)$ is called the
+	\emph{symmetric group on $X$}. If $X$ is a finite set, there is no harm in
+	assuming that $X = \{1, 2, \dots, n\}$. In this case, we denote the group
+	$(S_X, \circ)$ by $S_n$.
+\end{definition}
+
+\begin{notation}
+	If $\sigma \in S_n$, we can represent $f$ by an array
+	\[
+		\begin{pmatrix}
+			1 & 2 & 3 & \cdots & n \\
+			\sigma(1) & \sigma(2) & \sigma(3) & \cdots & \sigma(n)
+		\end{pmatrix}.
+	\]
+\end{notation}
+
+\begin{fact}
+	$|S_n| = n$!
+\end{fact}
+
+\begin{definition}
+	Given distinct $i_1, \dots, i_n$, the $n$-cycle $(i_1 \ i_2 \cdots i_n)$ maps
+	$i_1$ to $i_2$, $i_2$ to $i_3$, $\dots$, $i_n$ to $i_1$, and is the identity
+	elsewhere.
+\end{definition}
+
+\begin{fact}
+	The order of an $n$-cycle is its length $n$.
+\end{fact}
+
+\begin{definition}
+	Two cycles $(i_1 \ i_2 \cdots i_n)$ and $(j_1 \ j_2 \cdots j_n)$ are
+	\emph{disjoint} if
+	\[
+		\{i_1, \dots, i_n\} \cap \{j_1, \dots, j_n\} = \emptyset.
+	\]
+\end{definition}
+
+\begin{fact}
+	If $\sigma \in S_n$ is written as a product of disjoint cycles $\sigma =
+	\sigma_1 \cdots \sigma_k$, then
+	\[
+		o(\sigma) = \lcm(\text{length } \sigma_1, \dots, \text{length } \sigma_k).
+	\]
+\end{fact}
+
+\begin{definition}
+	``Transposition'' is just another word for 2-cycle.
+\end{definition}
+
+\begin{fact}
+	Every element of $S_n$ can be written as a product of transpositions. A given
+	$\sigma \in S_n$ can be written as a product of transpositions in many ways,
+	this product is \emph{not} a unique factorization.
+\end{fact}
+
+\begin{definition}
+	A permutation is said to be \emph{even} if it can be written as the product
+	of an even number of transpositions. It is \emph{odd} if it can be written as
+	the product of an odd number of transpositions.
+\end{definition}
+
+\begin{definition}
+	The alternating group $A_n$ consists of all even permutations in $S_n$.
+\end{definition}
+
+\begin{fact}
+	For $n \geq 2$, $|A_n| = \frac{n!}{2}$.
+\end{fact}
+
+\begin{fact}
+	An $n$-cycle can be written as a product of $n - 1$ transpositions. In
+	particular, every cycle of odd length has odd order but is an even
+	permutation. Similarly, every cycle of even length has even order but is an
+	odd permutation.
+\end{fact}
