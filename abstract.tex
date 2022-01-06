@@ -382,3 +382,29 @@
 	If $R$ is a commutative ring, the \emph{polynomial ring} $R[x]$ consists of
 	all polynomials in $x$ with coefficients in $R$.
 \end{definition}
+
+\section*{Ideals}
+
+\begin{definition}
+	A subset $I \subseteq R$ is an \emph{ideal} if it satisfies the following
+	properties:
+	\begin{enumerate}
+		\item $I \neq \emptyset$.
+		\item For all $x, y \in I$, we have $x - y \in I$.
+		\item For all $x \in I$ and $r \in R$, we have $rx \in I$ and $xr \in I$.
+	\end{enumerate}
+	Properties 1 and 2 say that $I$ is a subgroup under addition, and property 3
+	is sometimes informally called the ``sticky'' property.
+\end{definition}
+
+\begin{facts}
+	Some facts about ideals.
+	\begin{itemize}
+		\item When the ring is commutative, we have $rx = xr$, so the sticky
+			property simplifies to: For all $x \in I$ and $r \in R$, we have $rx \in
+			I$.
+		\item An ideal $I$ always contains the zero element of the ring.
+		\item Let $R$ be a ring with unity 1, and let $I \subseteq R$ be an ideal.
+			Then $I$ contains 1 if and only if $I = R$.
+	\end{itemize}
+\end{facts}
