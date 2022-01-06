@@ -304,3 +304,98 @@
 			this case.
 	\end{itemize}
 \end{facts}
+
+\section*{Maxima and Minima of Functions of Several Variables}
+
+\begin{definition}
+	In two dimensions $(a, b)$ is a critical point of $f(x, y)$ provided
+	\[
+		f_x(a, b) = f_y(a, b) = 0.
+	\]
+\end{definition}
+
+\begin{definition}
+	A function of two variables has a local maximum at $(a, b)$ if $f(x, y) \leq
+	f(a, b)$ when $(x, y)$ is near $(a, b)$. [This means that $f(x, y) \leq f(a,
+	b)$ for all points $(x, y)$ in soem disk with center $(a, b)$.] The number
+	$f(a, b)$ is called a local maximum value. If $f(x, y) \geq f(a, b)$ when $(x,
+	y)$ is near $(a, b)$, then $f$ has a local minimum at $(a, b)$ and $f(a, b)$
+	is a local minimum value.
+\end{definition}
+
+\begin{fact}
+	If $f$ has a local maximum or minimum at $(a, b)$ and the first-order partial
+	derivatives of $f$ exist there, then $(a, b)$ is a critical point of $f$.
+\end{fact}
+
+\begin{definition}
+	Let $(a, b)$ be a critical point of $f$. $(a, b)$ is called a saddle point of
+	$f$ if $f(a, b)$ is not a local maximum or minimum.
+\end{definition}
+
+\begin{fact}
+	For a suitably nice function $f(x, y)$, the second derivative test goes as
+	follows. Let $(a, b)$ be a critical point of $f$, and define
+	\[
+		D = \det
+		\begin{pmatrix}
+			f_{xx} & f_{xy} \\
+			f_{xy} & f_{yy}
+		\end{pmatrix}.
+	\]
+	Then:
+	\begin{itemize}
+		\item If $D(a, b) > 0$ and $f_{xx}(a, b) > 0$, then $f$ has a local minimum
+			at $(a, b)$.
+		\item If $D(a, b) > 0$ and $f_{xx}(a, b) < 0$, then $f$ has a local maximum
+			at $(a, b)$.
+		\item If $D(a, b) < 0$, then $f$ has a saddle point at $(a, b)$.
+	\end{itemize}
+	The second derivative test is inconclusive in all other cases.
+\end{fact}
+
+\begin{fact}
+	In a constrained optimization problem, you want to find the maximum or minimum
+	of a function subject to a constraint. Such problems occur in two and three
+	dimensions and use the method of Lagrange multipliers. We assume that the
+	function and constraint are differentiable.
+	\begin{itemize}
+		\item To maximize or minimize $f(x, y)$ subject to the constraint $g(x, y) =
+			0$, solve
+			\[
+				\nabla f(x, y) = \lambda \nabla g(x, y), \quad g(x, y) = 0,
+			\]
+			or equivalently,
+			\[
+				f_x(x, y) = \lambda g_x(x, y), \quad f_y(x, y) = \lambda g_y(x, y),
+				\quad g(x, y) = 0.
+			\]
+		\item To maximize or minimize $f(x, y, z)$ subject to the constraint $g(x, y,
+			z) = 0$, solve
+			\[
+				\nabla f(x, y, z) = \lambda \nabla g(x, y, z), \quad g(x, y, z) = 0,
+			\]
+			or equivalently,
+			\[
+				f_x(x, y, z) = \lambda g_x(x, y, z), \quad f_y(x, y, z) = \lambda g_y(x,
+				y, z), \quad f_z(x, y, z) = \lambda g_z(x, y, z), \quad g(x, y, z) = 0.
+			\]
+	\end{itemize}
+	It is customary to call $\lambda$ the Lagrange multiplier.
+\end{fact}
+
+\begin{fact}
+	A problem may ask for the maximum and minimum values (also called extreme
+	values) of a differentiable function $f(x, y)$ on a closed and bounded region
+	in the plane. Extreme values are known to exist in this situation. They can
+	occur in one of two places:
+	\begin{itemize}
+		\item In the interior of the region, where they occur among the critical
+			points of $f$.
+		\item On the boundary of th region, where you use Lagrange multipliers. The
+			constraint is the defining equation of the boundary.
+	\end{itemize}
+	Note that when you find the critical points in the interior, you do \emph{not}
+	need to apply the second derivative test (which would only tell you about
+	local maxima or minima).
+\end{fact}
