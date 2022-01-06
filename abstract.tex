@@ -318,3 +318,67 @@
 	permutation. Similarly, every cycle of even length has even order but is an
 	odd permutation.
 \end{fact}
+
+\section*{Rings}
+
+\begin{definition}
+	Suppose that $R$ is a set and $+$ and $\cdot$ are two binary operations on
+	$R$. Further suppose that:
+	\begin{enumerate}
+		\item $(R, +)$ is an abelian group
+		\item $\cdot$ is associative
+		\item $\forall r_1, r_2, r_3 \in R$,
+			\begin{align*}
+				r_1 (r_2 + r_3) &= r_1 r_2 + r_1 r_3 \text{ and } \\
+				(r_2 + r_3) r_1 &= r_2 r_1 + r_3 r_1.
+			\end{align*}
+	\end{enumerate}
+	Then, $R$ together with $+$ and $\cdot$ is called a \emph{ring}. We denote it
+	by $(R, +, \cdot)$ or just $R$ for short.
+\end{definition}
+
+\begin{definition}
+	If $\cdot$ is commutative, then $R$ is called a \emph{commutative ring}.
+\end{definition}
+
+\begin{notation}
+	The \emph{additive} identity element of $R$ is denoted by $0_R$ or just $0$.
+\end{notation}
+
+\begin{definition}
+	If $\cdot$ has a \emph{multiplicative} identity element, it is unique and
+	denoted $1_R$ or just $1$. We call $1_R$ the \emph{unity} of $R$ if it exists.
+	A ring with unity is called a \emph{ring with unity}.
+\end{definition}
+
+\begin{definition}
+	If $R$ is a ring with unity, then any $x \in R$ that has a
+	\emph{multiplicative} inverse $x^{-1}$ is called a \emph{unit}. The set of all
+	units of $R$ is denoted $R^\times$ and forms a group under the multiplication
+	operation, with identity element $1_R$.
+\end{definition}
+
+\begin{definition}
+	A ring $R$ is called a \emph{division ring} if $R$ has a unity $1 \neq 0$ and
+	every nonzero element of $R$ is a unit. A commutative division ring is called
+	a \emph{field}.
+\end{definition}
+
+\begin{facts}
+	Suppose $R$ is a ring and $x \in R$.
+	\begin{itemize}
+		\item $0_R x = x 0_R = 0_R$.
+		\item Since $(R, +)$ forms a group, for an integer $n$, we write $nx$ to
+			denote $x$ added to itself $n$ times (or subtracted, if $n$ is negative;
+			or $0_R$ if $n = 0$).
+		\item For a \emph{positive} integer $n$, we write $x^n$ for $x$ multiplied
+			by itself $n$ times. If $R$ has unity, then $x^0 = 1_R$; if in addition
+			$x$ is a unit (i.e., if $x$ has multiplicative inverse), then $x^{-n} =
+			{(x^{-1})}^n$.
+	\end{itemize}
+\end{facts}
+
+\begin{definition}
+	If $R$ is a commutative ring, the \emph{polynomial ring} $R[x]$ consists of
+	all polynomials in $x$ with coefficients in $R$.
+\end{definition}
