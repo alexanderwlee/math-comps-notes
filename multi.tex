@@ -399,3 +399,74 @@
 	need to apply the second derivative test (which would only tell you about
 	local maxima or minima).
 \end{fact}
+
+\section*{Double Integrals}
+
+\begin{definition}
+	When the region $R$ has a nice description in Cartesian coordinates, the
+	double integral can be expressed as an iterated integral in two ways:
+	\begin{itemize}
+		\item The first way is
+			\[
+				\iint_R f(x, y)\, dA = \int_a^b \int_{g_1(x)}^{g_2(x)} f(x, y)\,
+				dy\, dx
+			\]
+			when $R$ consists of all points $(x, y)$ where $a \leq x \leq b$, and for
+			$x$ in this range, $g_1(x) \leq y \leq g_2(x)$. So $y = g_2(x)$ is the top
+			of $R$, $y = g_1(x)$ is the bottom, and $x = a$, $x = b$ are the sides.
+			When doing the inner integral $\int_{g_1(x)}^{g_2(x)} f(x, y)\, dy$, you
+			should treat $x$ as a constant.
+		\item The second way is
+			\[
+				\iint_R f(x, y)\, dA = \int_c^d \int_{h_1(y)}^{h_2(y)} f(x, y)\, dx\, dy
+			\]
+			when $R$ consists of all points $(x, y)$ where $c \leq y \leq d$, and for
+			$y$ in this range, $h_1(y) \leq x \leq h_2(y)$. From the point of view of
+			someone on the $y$-axis, $x = h_2(y)$ is the ``top'' of $R$, $x = h_1(y)$
+			is the ``bottom'', and $y = c$, $y = d$ are the ``sides''. When doing the
+			inner integral $\int_{h_1(y)}^{h_2(y)} f(x, y)\, dx$, treat $y$ as a
+			constant.
+	\end{itemize}
+\end{definition}
+
+\begin{fact}
+	The polar coordinates $(r, \theta)$ of a point are related to the Cartesian
+	coordinates $(x, y)$ by the equations
+	\[
+		r^2 = x^2 + y^2 \quad x = r \cos \theta \quad y = r \sin \theta.
+	\]
+\end{fact}
+
+\begin{definition}
+	When the region $R$ in a double integral $\iint_R f(x, y)\, dA$ has a nice
+	description in polar coordinates, the integral can be expressed as the
+	iterated integral
+	\[
+		\iint_R f(x, y)\, dA = \int_\alpha^\beta \int_{h_1(\theta)}^{h_2(\theta)}
+		f(r, \theta)\, r\, dr\, d\theta,
+	\]
+	where $R$ consists of all points with polar coordinates $(r, \theta)$ such
+	that $\alpha \leq \theta \leq \beta$, and for $\theta$ in this range,
+	$h_1(\theta) \leq r \leq h_2(\theta)$. When doing the inner integral
+	$\int_{h_1(\theta)}^{h_2(\theta)} f(r, \theta)\, r\, dr$, you should treat
+	$\theta$ as a constant.
+\end{definition}
+
+\begin{definition}
+	The basic area interpretation of the double integral is $\iint_R 1\, dA =
+	\text{Area}(R)$.
+
+	For volumes, there are two situations to consider:
+	\begin{itemize}
+		\item When $f(x, y) \geq 0$ on $R$, $\iint_R f(x, y)\, dA$ is the volume
+			under the surface $z = f(x, y)$ for $(x, y) \in R$.
+		\item More generally, suppose that a 3-dimensional region $V$ in $\R^3$
+			consists of all points $(x, y, z)$ such that $(x, y) \in R$ and $f_1(x, y)
+			\leq z \leq f_2(x, y)$. Thus $z = f_2(x, y)$ is the top of $V$, $z =
+			f_1(x, y)$ is the bottom, and the sides lie over the boundary of $R$. In
+			this case, the volume of $V$ is
+			\[
+				\text{Vol}(V) = \iint_R (f_2(x, y) - f_1(x, y))\, dA.
+			\]
+	\end{itemize}
+\end{definition}
