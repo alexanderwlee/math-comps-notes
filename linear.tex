@@ -509,3 +509,96 @@
 	The change of coordinates matrix to change coordinates the other way is the
 	inverse: ${[I]}_\beta^\alpha = {({[I]}_\alpha^\beta)}^{-1}$.
 \end{fact}
+
+\section*{Eigenvalues and Eigenvectors}
+
+\begin{definition}
+	Let $A$ be an $n \times n$ matrix, let $\lambda \in \R$ be a scalar, and let
+	$\vec{v} \in \R^n$. We say that $\vec{v}$ is an \emph{eigenvector} with
+	\emph{eigenvalue} $\lambda$ if $\vec{v} \neq 0$ and $A \vec{v} = \lambda
+	\vec{v}$.
+	\begin{itemize}
+		\item To say ``$\lambda$ is an eigenvalue of $A$'' means there exists
+			$\vec{v} \in \R^n \setminus \{0\}$ such that $A \vec{v} = \lambda
+			\vec{v}$.
+		\item To say ``$\vec{v}$ is an eigenvector of $A$'' means that $\vec{v} \neq
+			\vec{0}$ and there exists $\lambda \in \R$ such that $A \vec{v} = \lambda
+			\vec{v}$.
+		\item An eigenvalue $\lambda$ can be 0.
+		\item An eigenvector cannot be $\vec{0}$. (By definition.)
+	\end{itemize}
+\end{definition}
+
+\begin{definition}
+	The \emph{characteristic polynomial} of $A$ is $\det(A - \lambda I)$; that is,
+	subtract the variable $\lambda$ from each diagonal entry and take the
+	determinant. The result is a polynomial of degree $n$ in the variable
+	$\lambda$.
+\end{definition}
+
+\begin{fact}
+	The roots of the characteristic polynomial of $A$ are \emph{precisely} the
+	eigenvalues of $A$.
+\end{fact}
+
+\begin{definition}
+	The number of times that a given scalar $\lambda$ shows up as a root of the
+	characteristic polynomial is called the \emph{algebraic multiplicity} of
+	$\lambda$, or sometimes simply the \emph{multiplicity} of $\lambda$.
+\end{definition}
+
+\begin{definition}
+	The \emph{eigenspace} $E_\lambda$ of an eigenvalue $\lambda$ is the null space
+	$N(A - \lambda I)$ of the matrix $A - \lambda I$. It consists of all the
+	eigenvectors with eigenvalue $\lambda$, along with $\vec{0}$, which is not an
+	eigenvector.
+\end{definition}
+
+\begin{definition}
+	The eigenspace dimension $\dim(E_\lambda)$ is sometimes called the
+	\emph{geometric multiplicity} of $\lambda$.
+\end{definition}
+
+\begin{fact}
+	For any eigenvalue $\lambda$ of $A$, we have
+	\[
+		1 \leq (\text{geometric multiplicity of $\lambda$}) \leq (\text{algebraic
+		multiplicity of $\lambda$}).
+	\]
+\end{fact}
+
+\begin{fact}
+	To find the eigenvalues and eigenvectors of a matrix $A$:
+	\begin{enumerate}
+		\item Compute the characteristic polynomial $\det(A - \lambda I)$.
+		\item Find all roots of the characteristic polynomial; these are the
+			eigenvalues.
+		\item For each eigenvalue $\lambda$, use row reduction to find a basis for
+			the eigenspace $E_\lambda = N(A - \lambda I)$.
+	\end{enumerate}
+\end{fact}
+
+\begin{definition}
+	We say an $n \times n$ matrix $A$ is \emph{diagonalizable} if there is an
+	invertible matrix $P$ and a diagonal matrix $D$ such that $P^{-1}AP = D$. The
+	following are equivalent:
+	\begin{itemize}
+		\item $A$ is diagonalizable.
+		\item There is a \emph{basis} for $\R^n$ consisting of eigenvectors of $A$.
+		\item All roots of the characteristic polynomial of $A$ are real, and for
+			each such root $\lambda$,
+			\[
+				(\text{geometric multiplicity of $\lambda$}) = (\text{algebraic
+				multiplicity of $\lambda$}).
+			\]
+	\end{itemize}
+	In that case, the matrix $P$ consists of $n$ linearly independent eigenvectors
+	down the columns, and the diagonal matrix $D$ has the eigenvalues along the
+	diagonal, \emph{in the same order}.
+\end{definition}
+
+\begin{fact}
+	If $A$ has $n$ \emph{distinct} real eigenvalues, then $A$ is certainly
+	diagonalizable. (However, if $A$ has repeated eigenvalues, it may or may not
+	be diagonalizable.)
+\end{fact}
