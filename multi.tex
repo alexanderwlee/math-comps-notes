@@ -470,3 +470,48 @@
 			\]
 	\end{itemize}
 \end{definition}
+
+\section*{Triple Integrals}
+
+\begin{definition}
+	Given a function $f(x, y, z)$ on a region $R$ in $\R^3$, one can define the
+	triple integral $\iiint_R f(x, y, z)\, dV$.
+	\begin{itemize}
+		\item Cartesian coordinates $x, y, z$, where $dV = dx\, dy\, dz$ or $dz\,
+			dy\, dx$. Other orders are possible.
+		\item  Cylindrical coordinates $r, \theta, z$, where $dV = r\, dz\, dr\,
+			d\theta$.
+			\begin{itemize}
+				\item To convert from cylindrical to Cartesian coordinates, we use these
+					equations
+					\[
+						x = r \cos\theta \quad y = r \sin\theta \quad z = z.
+					\]
+				\item To convert from Cartesian to cylindrical coordinates, we use these
+					equations
+					\[
+						r^2 = x^2 + y^2 \quad \tan\theta = \frac{y}{x} \quad z = z.
+					\]
+			\end{itemize}
+		\item Spherical coordinates $\rho, \phi, \theta$, where $dV = \rho^2\,
+			\sin\phi\, d\rho\, d\phi\, d\theta$.
+			\begin{itemize}
+				\item To convert from spherical to Cartesian coordinates, we use these
+					equations
+					\[
+						x = \rho \sin\phi \cos\theta \quad y = \rho \sin\phi \sin\theta
+						\quad z = \rho \cos\phi.
+					\]
+				\item To convert from Cartesian to spherical coordinates, we use the
+					equation
+					\[
+						\rho^2 = x^2 + y^2 + z^2.
+					\]
+			\end{itemize}
+	\end{itemize}
+\end{definition}
+
+\begin{definition}
+	The basic volume interpretation of the triple integral is $\iiint_R 1\, dV =
+	\text{Vol}(R)$.
+\end{definition}
