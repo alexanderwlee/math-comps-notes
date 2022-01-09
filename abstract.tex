@@ -408,3 +408,60 @@
 			Then $I$ contains 1 if and only if $I = R$.
 	\end{itemize}
 \end{facts}
+
+\section*{Quotient Rings}
+
+\begin{definition}
+	Recall that an ideal $I \subseteq R$ is a group under addition, so the
+	cosets of $I$ are usually written
+	\[
+		I + r = \{s + r \mid s \in I\},
+	\]
+	although sometimes you see $r + I$ since addition is commutative. The
+	definition of ideal guarantees that the set of cosets
+	\[
+		R/I = \{I + r \mid r \in R\}
+	\]
+	becomes a ring, called the quotient ring, under the following
+	operations:
+	\[
+		(I + a) + (I + b) = I + (a + b) \quad \text{and} \quad (I + a) (I + b) = I +
+		ab.
+	\]
+\end{definition}
+
+\section*{Ring Homomorphisms}
+
+\begin{definition}
+	Let $R$ and $S$ be rings and let $\phi : R \rightarrow S$ be a function. Then,
+	$\phi$ is a \emph{ring homomorphism} if for all $x, y \in R$:
+	\begin{enumerate}
+		\item $\phi(x + y) = \phi(x) + \phi(y)$.
+		\item $\phi(xy) = \phi(x) \phi(y)$.
+	\end{enumerate}
+	We define \emph{isomorphism} just as before.
+\end{definition}
+
+\begin{facts}
+	Some facts about ring homomorphisms.
+	\begin{itemize}
+		\item If $\phi : R \rightarrow s$ is a ring homomorphism, then $\phi(0_R) =
+			0_S$. [But even if both rings have 1, we might \emph{not} have $\phi(1_R)
+			= 1_S$!]
+		\item If $\phi : R \rightarrow S$ is a ring homomorphism, then for all $x
+			\in R$ and all $n \in \Z$, we have $\phi(nx) = n \phi(x)$.
+		\item If $\phi : R \rightarrow S$ is a ring homomorphism, then for all $x
+			\in R$ and all $n \in \N$, we have $\phi(x^n) = {\phi(x)}^n$.
+	\end{itemize}
+\end{facts}
+
+\begin{theorem}
+	If $\phi : R \rightarrow S$ is a ring homomorphism, then $\Ker(\phi)$ is an
+	ideal of $R$.
+\end{theorem}
+
+\begin{theorem}[The Fundamental Theorem of Ring Homomorphisms]
+	If $\phi : R \rightarrow S$ is a ring homomorphism, then there is a ring
+	homomorphism $\widetilde{\phi} : R/\Ker(\phi) \simeq \Image(\phi)$ defined by
+	$\widetilde{\phi}(\Ker(\phi) + r) = \phi(r)$.
+\end{theorem}
